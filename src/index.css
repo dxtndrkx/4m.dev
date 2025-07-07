@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-light-border;
+  }
+  
+  body {
+    @apply bg-app-bg text-text-primary font-inter;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .gradient-accent {
+    background: linear-gradient(90deg, theme(colors.accent-from), theme(colors.accent-to));
+  }
+  
+  .card-base {
+    @apply bg-card-base rounded-xl shadow-app border border-light-border;
+  }
+  
+  .btn-primary {
+    @apply px-4 py-2 rounded-lg bg-gradient-to-r from-accent-from to-accent-to text-text-primary font-medium;
+    @apply hover:scale-105 transition-all duration-300 ease-app;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 rounded-lg bg-card-base border border-light-border text-text-primary;
+    @apply hover:bg-light-border hover:scale-105 transition-all duration-300 ease-app;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme(colors.app-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme(colors.light-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme(colors.accent-from);
+}
